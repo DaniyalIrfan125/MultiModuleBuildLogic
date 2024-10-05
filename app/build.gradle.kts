@@ -1,10 +1,9 @@
 plugins {
 //    alias(libs.plugins.android.application)
 //    alias(libs.plugins.jetbrains.kotlin.android)
-
-     id("MultiModuleBuildLogic.android.application")
-//    id("wallpaper.android.application.compose")
-//    id("multimodulebuildlogic.android.hilt")
+    alias(libs.plugins.ksp)
+    id("MultiModuleBuildLogic.android.application")
+    id("MultiModuleBuildLogic.android.hilt")
 }
 
 android {

@@ -21,8 +21,7 @@ dependencies {
 //    compileOnly(libs.android.gradlePlugin)
 //    compileOnly(libs.android.tools.common)
 //    compileOnly(libs.kotlin.gradlePlugin)
-//    compileOnly(libs.ksp.gradlePlugin)
-
+   // compileOnly(libs.plugins.ksp)
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
 }
@@ -44,6 +43,11 @@ gradlePlugin {
         register("androidLibrary") {
             id = "MultiModuleBuildLogic.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+
+        register("androidHilt") {
+            id = "MultiModuleBuildLogic.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
         }
 
     }
