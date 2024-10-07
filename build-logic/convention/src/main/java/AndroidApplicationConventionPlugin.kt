@@ -11,10 +11,13 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
+                apply("MultiModuleBuildLogic.android.lint")
             }
 
             extensions.configure<ApplicationExtension> {
                   configureKotlinAndroid(this)
+
+
                 defaultConfig.targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
             }
 

@@ -2,8 +2,9 @@ plugins {
 //    alias(libs.plugins.android.library)
 //    alias(libs.plugins.jetbrains.kotlin.android)
 
-    id("MultiModuleBuildLogic.android.library")
-    id("MultiModuleBuildLogic.android.hilt")
+//    id("MultiModuleBuildLogic.android.library")
+    alias(libs.plugins.custom.android.library)
+    alias(libs.plugins.custom.android.hilt)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 

@@ -49,6 +49,10 @@ gradlePlugin {
             id = "MultiModuleBuildLogic.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
+        register("androidLint") {
+            id = "MultiModuleBuildLogic.android.lint"
+            implementationClass = "AndroidLintConventionPlugin"
+        }
 
     }
 }
