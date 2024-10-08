@@ -25,7 +25,7 @@ hiltPlugin = "2.51.1"
 ksp = "2.0.0-1.0.22"
 materialRippleVersion = "1.0.2"
 mpandroidchartVersion = "v3.1.0"
-navigationFragmentKtx = "2.8.1"
+navigationFragmentKtx = "2.8.2"
 okhttp = "4.12.0"
 picasso = "2.71828"
 retrofit = "2.11.0"
@@ -44,6 +44,13 @@ stethoVersion = "1.6.0"
 sumsubIdensicMobileSdkVersion = "1.31.3"
 swiperefreshlayoutVersion = "1.1.0"
 timber = "5.0.1"
+firebaseBom = "33.1.1"
+firebaseCrashlyticsPlugin = "3.0.2"
+firebasePerfPlugin = "1.4.2"
+androidTools = "31.7.0"
+gmsPlugin = "4.4.2"
+
+
 
 
 [libraries]
@@ -63,9 +70,10 @@ androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
-androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidxRoomRuntimeVersion" }
-androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidxRoomRuntimeVersion" }
-androidx-room-room-runtime2 = { module = "androidx.room:room-runtime", version.ref = "androidxRoomRuntimeVersion" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayoutVersion" }
 balysv-material-ripple = { module = "com.balysv:material-ripple", version.ref = "materialRippleVersion" }
 biometric = { module = "com.mikhaellopez:biometric", version.ref = "biometric" }
@@ -98,6 +106,19 @@ rootbeer-lib = { module = "com.scottyab:rootbeer-lib", version.ref = "rootbeerLi
 shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmerVersion" }
 ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+firebase-crashlytics-gradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
+firebase-performance-gradlePlugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "firebasePerfPlugin" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-cloud-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+firebase-performance = { group = "com.google.firebase", name = "firebase-perf" }
+firebase-performance-gradle = { group = "com.google.firebase", name = "perf-plugin", version.ref = "firebasePerfPlugin" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -105,9 +126,16 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 android-library = { id = "com.android.library", version.ref = "agp" }
 hilt-android-gradle-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltPlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
+gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
 
 
-## Plugins defined by this project
+# Plugins defined by this project
 custom-android-application = { id = "MultiModuleBuildLogic.android.application", version = "unspecified" }
 custom-android-hilt = { id = "MultiModuleBuildLogic.android.hilt", version = "unspecified" }
 custom-android-library = { id = "MultiModuleBuildLogic.android.library", version = "unspecified" }
+custom-android-lint = { id = "MultiModuleBuildLogic.android.lint", version = "unspecified" }
+custom-android-room = { id = "MultiModuleBuildLogic.android.room", version = "unspecified" }
+android-application-firebase = { id = "MultiModuleBuildLogic.android.application.firebase", version = "unspecified" }

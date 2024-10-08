@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "329750901110",
+    "project_id": "onesignal-412b9",
+    "storage_bucket": "onesignal-412b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329750901110:android:3aa0f275440039e5104a57",
+        "android_client_info": {
+          "package_name": "com.demo.webviewapplicationdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329750901110-b6ta494l8572lg1kemo2i9a2sb8muhun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-iIfaGjB1a44AByULTVPYC2Uon8V-wM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329750901110-b6ta494l8572lg1kemo2i9a2sb8muhun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329750901110:android:dfb1e0c90b7d9132104a57",
+        "android_client_info": {
+          "package_name": "com.di.multimodulebuildlogic.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329750901110-b6ta494l8572lg1kemo2i9a2sb8muhun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-iIfaGjB1a44AByULTVPYC2Uon8V-wM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329750901110-b6ta494l8572lg1kemo2i9a2sb8muhun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329750901110:android:5a27c8a023d6f481104a57",
+        "android_client_info": {
+          "package_name": "com.di.multimodulebuildlogic.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329750901110-b6ta494l8572lg1kemo2i9a2sb8muhun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-iIfaGjB1a44AByULTVPYC2Uon8V-wM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329750901110-b6ta494l8572lg1kemo2i9a2sb8muhun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

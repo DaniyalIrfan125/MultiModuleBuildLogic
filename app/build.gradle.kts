@@ -1,9 +1,7 @@
 plugins {
-//    alias(libs.plugins.android.application)
-//    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.custom.android.application)
-   // id("MultiModuleBuildLogic.android.application")
+    alias(libs.plugins.android.application.firebase)
     alias(libs.plugins.custom.android.hilt)
 }
 
@@ -17,7 +15,7 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = ".debug"
+          //  applicationIdSuffix = ".debug"
         }
         release {
             isMinifyEnabled = false
