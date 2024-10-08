@@ -1,32 +1,24 @@
-package com.di.multimodulebuildlogic
+package com.di.moduleb
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.di.modulea.MainActivityA
-import com.di.moduleb.MainActivityB
 
-class MainActivity : AppCompatActivity() {
+class MainActivityB : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_b)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        findViewById<TextView>(R.id.tv_moveToA).setOnClickListener {
-            startActivity(Intent(this, MainActivityA::class.java))
-        }
-
-        findViewById<TextView>(R.id.tv_moveToB).setOnClickListener {
-            startActivity(Intent(this, MainActivityB::class.java))
-        }
+        System.loadLibrary("native-libB")
+        findViewById<TextView>(R.id.tv_b).text = NativeHooksModuleB.stringFromJNI()
     }
 }

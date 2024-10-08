@@ -1,6 +1,7 @@
 package com.di.modulea
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,7 @@ class MainActivityA : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        System.loadLibrary("native-libA")
+        findViewById<TextView>(R.id.tv_a).text = NativeHooksModuleA.stringFromJNI()
     }
 }

@@ -1,22 +1,18 @@
 plugins {
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.custom.android.application)
-    alias(libs.plugins.android.application.firebase)
+    alias(libs.plugins.custom.android.library)
     alias(libs.plugins.custom.android.hilt)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.custom.android.room)
 }
 
 android {
-    namespace = "com.di.multimodulebuildlogic"
+    namespace = "com.di.moduleb"
+
     defaultConfig {
-        applicationId = "com.di.multimodulebuildlogic"
-        versionCode = libs.versions.versionCode.get().toInt()
-        versionName = libs.versions.versionName.get()
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        debug {
-          //  applicationIdSuffix = ".debug"
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -25,6 +21,17 @@ android {
             )
         }
     }
+
+    // Enable NDK support
+    externalNativeBuild {
+        cmake {
+            version = "3.22.1" // Specify your desired CMake version
+            path = file("src/main/cpp/CMakeLists.txt") // Path to CMakeLists.txt
+        }
+    }
+
+    ndkVersion = "27.1.12297006"
+
 
 }
 
@@ -38,7 +45,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation(project(":ModuleA"))
-    implementation(project(":ModuleB"))
 }

@@ -3,8 +3,6 @@ plugins {
     alias(libs.plugins.custom.android.hilt)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.custom.android.room)
-
-
 }
 
 android {
@@ -23,6 +21,18 @@ android {
             )
         }
     }
+
+
+    // Enable NDK support
+    externalNativeBuild {
+        cmake {
+            version = "3.22.1" // Specify your desired CMake version
+            path = file("src/main/cpp/CMakeLists.txt") // Path to CMakeLists.txt
+        }
+    }
+
+    ndkVersion = "27.1.12297006"
+
 
 }
 

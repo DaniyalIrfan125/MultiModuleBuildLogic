@@ -5,28 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivityB">
     <TextView
-        android:id="@+id/tv_moveToA"
+        android:id="@+id/tv_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Navigate TO a"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="B"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_moveToB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Navigate TO b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_moveToA" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
