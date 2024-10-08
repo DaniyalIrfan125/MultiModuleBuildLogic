@@ -18,7 +18,7 @@ class MainActivityB : AppCompatActivity() {
             insets
         }
 
-        System.loadLibrary("native-libB")
+
         findViewById<TextView>(R.id.tv_b).text = NativeHooksModuleB.stringFromJNI()
     }
 }

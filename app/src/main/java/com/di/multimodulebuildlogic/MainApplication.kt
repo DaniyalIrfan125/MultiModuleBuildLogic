@@ -19,6 +19,7 @@ class MainApplication : Application() {
         super.onCreate()
         application = this
 
-
+        System.loadLibrary("native-libA")
+        System.loadLibrary("native-libB")
     }
 }

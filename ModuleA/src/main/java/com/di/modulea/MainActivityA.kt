@@ -17,7 +17,7 @@ class MainActivityA : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        System.loadLibrary("native-libA")
+
         findViewById<TextView>(R.id.tv_a).text = NativeHooksModuleA.stringFromJNI()
     }
 }
