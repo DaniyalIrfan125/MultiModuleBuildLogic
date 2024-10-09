@@ -6,8 +6,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivityA : AppCompatActivity() {
+
+    @Inject
+    lateinit var  mainClass: MainClass
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,6 +25,6 @@ class MainActivityA : AppCompatActivity() {
             insets
         }
 
-        findViewById<TextView>(R.id.tv_a).text = NativeHooksModuleA.stringFromJNI()
+        findViewById<TextView>(R.id.tv_a).text = mainClass.getDescription()
     }
 }
