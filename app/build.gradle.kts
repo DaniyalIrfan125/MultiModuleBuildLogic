@@ -40,6 +40,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
 
-    implementation(projects.moduleA)
-    implementation(projects.moduleB)
+    implementation(projects.userside)
+    implementation(projects.merchantside)
 }
