@@ -1,22 +1,21 @@
 plugins {
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.custom.android.application)
- //   alias(libs.plugins.android.application.firebase)
+    alias(libs.plugins.custom.android.library)
     alias(libs.plugins.custom.android.hilt)
+    alias(libs.plugins.custom.android.room)
 }
 
 android {
-    namespace = "com.uae.myvaultspay"
+    namespace = "com.myvaultspay.usermodule"
+
     defaultConfig {
-        applicationId = "com.uae.myvaultspay"
-        versionCode = libs.versions.versionCode.get().toInt()
-        versionName = libs.versions.versionName.get()
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         debug {
             isMinifyEnabled = false
         }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -25,6 +24,18 @@ android {
             )
         }
     }
+
+
+    // Enable NDK support
+    externalNativeBuild {
+        cmake {
+            version = "3.22.1" // Specify your desired CMake version
+            path = file("src/main/cpp/CMakeLists.txt") // Path to CMakeLists.txt
+        }
+    }
+
+    ndkVersion = "27.1.12297006"
+
 
 }
 
@@ -39,7 +50,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-
-    implementation(projects.usermodule)
-    implementation(projects.merchantmodule)
+    implementation(projects.core.common)
 }
+

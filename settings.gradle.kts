@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 rootProject.name = "MultiModuleBuildLogic"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
-include(":userside")
+include(":usermodule")
 
-include(":merchantside")
+include(":merchantmodule")
 include(":core:common")
