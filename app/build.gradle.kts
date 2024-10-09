@@ -15,9 +15,7 @@ android {
 
     buildTypes {
         debug {
-
             isMinifyEnabled = false
-          //  applicationIdSuffix = ".debug"
         }
         release {
             isMinifyEnabled = true
@@ -41,6 +39,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(project(":ModuleA"))
-    implementation(project(":ModuleB"))
+
+    implementation(projects.moduleA)
+    implementation(projects.moduleB)
 }

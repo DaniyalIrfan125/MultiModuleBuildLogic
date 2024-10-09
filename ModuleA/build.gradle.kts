@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.custom.android.library)
     alias(libs.plugins.custom.android.hilt)
-    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.custom.android.room)
 }
 

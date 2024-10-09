@@ -26,3 +26,4 @@ include(":app")
 include(":ModuleA")
 
 include(":ModuleB")
+include(":core:common")
