@@ -35,16 +35,6 @@ internal fun Project.configureKotlinAndroid(
             // Apply generic product flavors for both app and library modules
             configureGenericProductFlavors(this)
 
-            // Common build types for both app and library
-            buildTypes {
-                getByName("debug") {
-                    isMinifyEnabled = false
-                }
-                getByName("release") {
-                    isMinifyEnabled = true
-                }
-            }
-
         }
 
     }
