@@ -6,10 +6,10 @@ import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.myvaultspay.merchantmodule.AppConstants
+import com.myvaultspay.merchantmodule.MerchantAppConstants
 import com.myvaultspay.merchantmodule.data.local.db.AppDao
-import com.myvaultspay.merchantmodule.data.remote.apiservice.ApiService
-import com.myvaultspay.merchantmodule.data.remote.repository.MainRepositoryImp
+import com.myvaultspay.merchantmodule.data.remote.apiservice.MerchantApiService
+import com.myvaultspay.merchantmodule.data.remote.repository.MerchantMerchantMainRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +25,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+class MerchantNetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(
@@ -45,10 +45,10 @@ class NetworkModule {
     fun provideApiService(
         okHttpClient: OkHttpClient,
         gson: Gson
-    ): ApiService {
-        return Retrofit.Builder().baseUrl(AppConstants.ApiConfiguration.BASE_URL)
+    ): MerchantApiService {
+        return Retrofit.Builder().baseUrl(MerchantAppConstants.ApiConfiguration.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .client(okHttpClient).build().create(ApiService::class.java)
+            .client(okHttpClient).build().create(MerchantApiService::class.java)
     }
 
 
@@ -70,7 +70,7 @@ class NetworkModule {
         chuckerCollector: ChuckerCollector
     ): ChuckerInterceptor =
         ChuckerInterceptor.Builder(context).collector(chuckerCollector)
-            .maxContentLength(AppConstants.Chucker.CONTENT_LENGTH)
+            .maxContentLength(MerchantAppConstants.Chucker.CONTENT_LENGTH)
             .redactHeaders("Content-Type", "application/json").alwaysReadResponseBody(true).build()
 
 
@@ -89,9 +89,9 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideRepository(
-        apiService: ApiService,
+        merchantApiService: MerchantApiService,
         appDao: AppDao
     ) =
-        MainRepositoryImp(apiService, appDao)
+        MerchantMerchantMainRepositoryImp(merchantApiService, appDao)
 
 }

@@ -3,7 +3,7 @@ package com.myvaultspay.merchantmodule
 import androidx.annotation.LongDef
 import androidx.annotation.StringDef
 
-object AppConstants {
+object MerchantAppConstants {
 
     @StringDef(ApiParams.ACCESS_TOKEN, ApiParams.API_ID, ApiParams.API_SECRET)
     annotation class ApiParams {

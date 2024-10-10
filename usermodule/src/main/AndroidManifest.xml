@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name="com.myvaultspay.usermodule.MainActivityA"
+            android:name="com.myvaultspay.usermodule.presentation.activity.MainActivityA"
             android:exported="false" />
     </application>
 

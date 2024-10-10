@@ -1,6 +1,6 @@
 package com.myvaultspay.merchantmodule
 
-object NativeHooksModuleB {
+object NativeHooksMerchant {
 
     // Declare the native method
     external fun stringFromJNI(): String

@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.myvaultspay.usermodule.MainActivityA
+import com.myvaultspay.usermodule.presentation.activity.MainActivityA
 import com.myvaultspay.merchantmodule.MainActivityB
 
 class MainActivity : AppCompatActivity() {
@@ -28,5 +28,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_moveToB).setOnClickListener {
             startActivity(Intent(this, MainActivityB::class.java))
         }
+
     }
 }

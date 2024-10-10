@@ -1,4 +1,4 @@
-package com.myvaultspay.usermodule
+package com.myvaultspay.usermodule.data.local.nativellib
 
 object NativeHooksModuleA {
 

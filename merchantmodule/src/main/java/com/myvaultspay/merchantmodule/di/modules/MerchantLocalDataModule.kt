@@ -1,8 +1,8 @@
 package com.myvaultspay.merchantmodule.di.modules
 
 import android.content.Context
-import com.myvaultspay.merchantmodule.data.local.datastore.DataStoreProvider
-import com.myvaultspay.merchantmodule.data.local.db.AppDatabase
+import com.myvaultspay.merchantmodule.data.local.datastore.MerchantDataStoreProvider
+import com.myvaultspay.merchantmodule.data.local.db.MerchantAppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,21 +13,21 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class LocalDataModule {
+class MerchantLocalDataModule {
 
     @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext appContext: Context) =
-        AppDatabase.getDatabase(appContext)
+        MerchantAppDatabase.getDatabase(appContext)
 
     @Singleton
     @Provides
-    fun provideDao(db: AppDatabase) = db.appDao()
+    fun provideDao(db: MerchantAppDatabase) = db.appDao()
 
 
     @Singleton
     @Provides
-    fun provideDataStore(@ApplicationContext appContext: Context) = DataStoreProvider(appContext)
+    fun provideDataStore(@ApplicationContext appContext: Context) = MerchantDataStoreProvider(appContext)
 
 
 }

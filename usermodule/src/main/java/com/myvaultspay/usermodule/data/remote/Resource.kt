@@ -1,6 +1,6 @@
-package com.myvaultspay.merchantmodule.data.remote
+package com.myvaultspay.usermodule.data.remote
 
-import com.myvaultspay.merchantmodule.data.models.responsemodels.genericresponsemodels.MerchantResponseError
+import com.myvaultspay.usermodule.data.models.responsemodels.genericresponsemodels.UserResponseError
 
 
 sealed class Resource<out T> {
@@ -11,7 +11,7 @@ sealed class Resource<out T> {
         val status: Status,
         val data: T?,
         val message: String?,
-        val merchantResponseError: MerchantResponseError?
+        val userResponseError: UserResponseError?
     ) : Resource<T>()
 
     enum class Status {
@@ -39,8 +39,8 @@ sealed class Resource<out T> {
          * Returns [State.Error] instance.
          * @param message Description of failure.
          */
-        fun <T> error(message: String, data: T? = null, merchantResponseError: MerchantResponseError?) =
-            Error<T>(Status.ERROR, data, message, merchantResponseError)
+        fun <T> error(message: String, data: T? = null, userResponseError: UserResponseError?) =
+            Error<T>(Status.ERROR, data, message, userResponseError)
 
     }
 

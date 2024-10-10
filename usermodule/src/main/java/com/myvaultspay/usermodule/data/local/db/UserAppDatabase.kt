@@ -1,23 +1,23 @@
-package com.myvaultspay.merchantmodule.data.local.db
+package com.myvaultspay.usermodule.data.local.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.myvaultspay.merchantmodule.AppConstants
-import com.myvaultspay.merchantmodule.data.models.responsemodels.PostsResponseItem
+import com.myvaultspay.usermodule.UserAppConstants
+import com.myvaultspay.usermodule.data.models.responsemodels.PostsResponseItem
 
 
 @Database(entities = [PostsResponseItem::class], version = 1, exportSchema = false)
-abstract class AppDatabase : RoomDatabase() {
+abstract class UserAppDatabase : RoomDatabase() {
 
     abstract fun appDao(): AppDao
 
     companion object {
         @Volatile
-        private var instance: AppDatabase? = null
+        private var instance: UserAppDatabase? = null
 
-        fun getDatabase(context: Context): AppDatabase =
+        fun getDatabase(context: Context): UserAppDatabase =
             instance
                 ?: synchronized(this) {
                     instance
@@ -30,8 +30,8 @@ abstract class AppDatabase : RoomDatabase() {
         private fun buildDatabase(appContext: Context) =
             Room.databaseBuilder(
                 appContext,
-                AppDatabase::class.java,
-                AppConstants.DbConfiguration.DB_NAME
+                UserAppDatabase::class.java,
+                UserAppConstants.DbConfiguration.DB_NAME
             )
                 .fallbackToDestructiveMigration()
                 .build()

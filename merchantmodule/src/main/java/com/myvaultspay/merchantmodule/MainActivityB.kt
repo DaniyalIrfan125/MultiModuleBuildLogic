@@ -20,6 +20,6 @@ class MainActivityB : AppCompatActivity() {
         }
 
 
-        findViewById<TextView>(R.id.tv_b).text = NativeHooksModuleB.stringFromJNI()
+        findViewById<TextView>(R.id.tv_b).text = NativeHooksMerchant.stringFromJNI()
     }
 }

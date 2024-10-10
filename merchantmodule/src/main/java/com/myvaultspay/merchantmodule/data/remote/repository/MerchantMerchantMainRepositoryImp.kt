@@ -1,22 +1,22 @@
 package com.myvaultspay.merchantmodule.data.remote.repository
 
 import com.myvaultspay.merchantmodule.data.local.db.AppDao
-import com.myvaultspay.merchantmodule.data.remote.apiservice.ApiService
+import com.myvaultspay.merchantmodule.data.remote.apiservice.MerchantApiService
 import com.myvaultspay.merchantmodule.domain.model.Product
-import com.myvaultspay.merchantmodule.domain.repository.MainRepository
+import com.myvaultspay.merchantmodule.domain.repository.MerchantMainRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 import javax.inject.Inject
 
-class MainRepositoryImp @Inject constructor(
-    private val apiService: ApiService,
+class MerchantMerchantMainRepositoryImp @Inject constructor(
+    private val merchantApiService: MerchantApiService,
     appDao: AppDao
-) : MainRepository {
+) : MerchantMainRepository {
 
 
     override suspend fun getProducts(): Flow<Response<List<Product>>> {
-        return flow { emit(apiService.getProducts()) }
+        return flow { emit(merchantApiService.getProducts()) }
     }
 
 }
